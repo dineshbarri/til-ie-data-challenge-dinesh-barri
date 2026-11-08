@@ -1,22 +1,112 @@
-# Ignore everything by default
-*
 
-# But allow these directories and files
-!src/
-!.devcontainer/
-!tests/
-!*.ipynb
-!*.py
-!*.md
-!*.txt
-!*.json
-!Dockerfile
-!.gitignore
-!requirements.txt
+# ============================================================
+# Retail Sales & Rebates Reconciliation
+# Python / PySpark / Delta Lake / GitHub Codespaces
+# ============================================================
 
-# Explicitly ignore standard noise
+# ------------------------------------------------------------
+# 1. Python cache and build artifacts
+# ------------------------------------------------------------
 __pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ------------------------------------------------------------
+# 2. Virtual environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ------------------------------------------------------------
+# 3. Secrets and local environment configuration
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ------------------------------------------------------------
+# 4. Jupyter temporary files
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# 5. Spark temporary and metadata files
+# ------------------------------------------------------------
 spark-warehouse/
 metastore_db/
+derby.log
 *.log
+*.log.*
+*.crc
+
+# ------------------------------------------------------------
+# 6. Raw Azure data and Delta Lake tables
+# ------------------------------------------------------------
+# Never commit client source data or generated Delta tables.
+
+src/data/raw/**
+src/data/bronze/**
+src/data/silver/**
+src/data/gold/**
+src/data/quarantine/**
+
+# Preserve empty directory structure.
+!src/data/raw/.gitkeep
+!src/data/bronze/.gitkeep
+!src/data/silver/.gitkeep
+!src/data/gold/.gitkeep
+!src/data/quarantine/.gitkeep
+
+# ------------------------------------------------------------
+# 7. Generated analysis outputs
+# ------------------------------------------------------------
+outputs/analysis/**
+
+# Preserve directory structure.
+!outputs/analysis/.gitkeep
+
+# ------------------------------------------------------------
+# 8. Temporary files
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------
+# 9. Presentation
+# ------------------------------------------------------------
+# Do NOT ignore presentation/*.pdf or *.pptx.
+# The final presentation must be included in the submission.
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# 10. Project source files
+# ------------------------------------------------------------
+# Keep these tracked:
+# README.md
+# requirements.txt
+# src/*.py
+# tests/*.py
+# presentation/*.pdf
+# presentation/*.pptx
+# .devcontainer/
+# .gitignore
+# ------------------------------------------------------------
