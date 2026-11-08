@@ -1,8 +1,9 @@
 <div align="center">
 
-# Retail Revenue, Reconciled
+# The Information Lab Ireland | Data Engineering Technical Challenge
 
-### A traceable sales & rebates data product built with PySpark and Delta Lake
+### Retail Sales & Rebates Reconciliation
+**An End-to-End PySpark & Delta Lake Proof of Concept**
 
 **The Information Lab Ireland · Data Engineering Technical Challenge · November 2026**
 
