@@ -110,3 +110,9 @@ Thumbs.db
 # .devcontainer/
 # .gitignore
 # ------------------------------------------------------------
+# VS Code local settings
+.vscode/
+
+# Generated profiling reports
+outputs/profiling/
+
